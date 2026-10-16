@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  color: #2d3748;
+}
+
+.app {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.app__header {
+  padding: 28px 28px 20px;
+  background: linear-gradient(135deg, #5a67d8, #805ad5);
+  color: #fff;
+}
+
+.app__header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.app__subtitle {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* Form */
+.task-form {
+  display: flex;
+  gap: 8px;
+  padding: 20px 28px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.task-form__input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.task-form__input:focus {
+  border-color: #805ad5;
+}
+
+.task-form__select {
+  padding: 12px 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.task-form__btn {
+  padding: 12px 22px;
+  background: #5a67d8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.task-form__btn:hover {
+  background: #434190;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 8px;
+  padding: 16px 28px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.filters__btn {
+  padding: 6px 16px;
+  border: none;
+  background: #edf2f7;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.filters__btn:hover {
+  background: #e2e8f0;
+}
+
+.filters__btn.is-active {
+  background: #5a67d8;
+  color: #fff;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  border-bottom: 1px solid #f7fafc;
+  transition: background 0.15s;
+}
+
+.task-item:hover {
+  background: #f7fafc;
+}
+
+.task-item__checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #5a67d8;
+  flex-shrink: 0;
+}
+
+.task-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-item__title {
+  font-size: 0.95rem;
+  word-break: break-word;
+  transition: all 0.2s;
+}
+
+.task-item.is-completed .task-item__title {
+  text-decoration: line-through;
+  color: #a0aec0;
+}
+
+.task-item__badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.task-item__badge--low    { background: #c6f6d5; color: #22543d; }
+.task-item__badge--medium { background: #fefcbf; color: #744210; }
+.task-item__badge--urgent { background: #fed7d7; color: #742a2a; }
+
+/* Polymorphism demo: urgent task styling */
+.task-item.is-urgent {
+  border-left: 4px solid #e53e3e;
+}
+
+.task-item__delete {
+  background: none;
+  border: none;
+  color: #cbd5e0;
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.task-item__delete:hover {
+  color: #e53e3e;
+  background: #fff5f5;
+}
+
+.task-list__empty {
+  padding: 48px 28px;
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.app__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  background: #f7fafc;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.app__clear {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.app__clear:hover {
+  background: #fff5f5;
+}
